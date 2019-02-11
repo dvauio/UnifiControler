@@ -1,5 +1,5 @@
 # Notes
-https://raw.githubusercontent.com/dvauio/UnifiControler/master/Ubuntu-Install.sh | bash
+https://github.com/dvauio/UnifiControler/blob/master/Ubuntu-Install.sh | bash
 #
 
 # Add MongoDB List Key
