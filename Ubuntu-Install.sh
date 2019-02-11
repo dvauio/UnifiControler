@@ -22,6 +22,8 @@ sudo apt update
 sudo apt-get install mongodb-org -y
 
 # Install Unifi
+echo -e "\e[1;31;42m Installing unifi Software \e[0m"
+
 sudo apt-get install unifi -y
 
 # Install Certbot
