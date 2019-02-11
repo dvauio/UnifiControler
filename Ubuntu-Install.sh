@@ -41,14 +41,15 @@ sudo echo vm.swappiness = 10 | sudo tee -a /etc/sysctl.conf
 sudo sysctl vm.vfs_cache_pressure=50
 
 # Request SSL cert
-sudo certbot certonly --standalone -d unifisvr4.ripstone.co.uk --register-unsafely-without-email --non-interactive --agree-tos
+sudo certbot certonly --standalone -d unifisvr5.ripstone.co.uk --register-unsafely-without-email --non-interactive --agree-tos
 
 #Import Cert
-cd /etc/letsencrypt/live/unifisvr4.ripstone.co.uk/
+cd /etc/letsencrypt/live/unifisvr5.ripstone.co.uk/
 openssl pkcs12 -export -in cert.pem -inkey privkey.pem -out unifi.p12 -name unifi -CAfile fullchain.pem -caname root
 mv /var/lib/unifi/keystore /var/lib/unifi/keystore.backup
-cd /etc/letsencrypt/live/unifisvr4.ripstone.co.uk
+cd /etc/letsencrypt/live/unifisvr5.ripstone.co.uk
 keytool -importkeystore -deststorepass aircontrolenterprise -destkeypass aircontrolenterprise -destkeystore /var/lib/unifi/keystore -srckeystore unifi.p12 -srcstoretype PKCS12 -alias unifi
+
 #Restart Unifi service
 service unifi restart
 
