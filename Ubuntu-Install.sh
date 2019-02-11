@@ -14,6 +14,9 @@ sudo apt-key adv --keyserver keyserver.ubuntu.com --recv 06E85760C0A52C50
 # Unifi List File
 echo 'deb http://www.ubnt.com/downloads/unifi/debian stable ubiquiti' | sudo tee /etc/apt/sources.list.d/100-ubnt-unifi.list
 
+# Add certbot repository
+sudo add-apt-repository ppa:certbot/certbot -y
+
 # Update Package Lists
 sudo apt update
 
@@ -24,8 +27,6 @@ sudo apt-get install mongodb-org
 sudo apt-get install unifi
 
 # Install Certbot
-sudo add-apt-repository ppa:certbot/certbot -y
-sudo apt update
 sudo apt install certbot -y
 
 # Install haveged
