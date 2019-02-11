@@ -42,7 +42,7 @@ sudo apt-key adv --keyserver keyserver.ubuntu.com --recv 06E85760C0A52C50
 echo 'deb http://www.ubnt.com/downloads/unifi/debian stable ubiquiti' | sudo tee /etc/apt/sources.list.d/100-ubnt-unifi.list
 
 # Update package database
-sudo apt-get update
+#sudo apt-get update
 
 # Install MongoDB 3.4
 sudo apt-get install mongodb-org
