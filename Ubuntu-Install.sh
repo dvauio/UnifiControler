@@ -3,12 +3,6 @@
 wget -O - https://raw.githubusercontent.com/dvauio/WiFi/master/Unifi-Server-Installer.sh | bash
 #
 
-# Update OS
-sudo dpkg --configure -a
-sudo apt update
-sudo apt upgrade -y
-sudo apt dist-upgrade -y
-
 # Add MongoDB List Key
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 0C49F3730359A14518585931BC711F9BA15703C6
 
@@ -21,6 +15,23 @@ sudo apt-key adv --keyserver keyserver.ubuntu.com --recv 06E85760C0A52C50
 # Unifi List File
 echo 'deb http://www.ubnt.com/downloads/unifi/debian stable ubiquiti' | sudo tee /etc/apt/sources.list.d/100-ubnt-unifi.list
 
+# Update Package Lists
+sudo apt update
+
+# Install MongoDB 3.4
+sudo apt-get install mongodb-org
+
+# Install Unifi
+sudo apt-get install unifi
+
+# Install Certbot
+sudo add-apt-repository ppa:certbot/certbot -y
+sudo apt update
+sudo apt install certbot -y
+
+# Install haveged
+sudo apt install haveged -y
+
 # Create SWAP file
 sudo fallocate -l 1G /swapfile
 sudo chmod 600 /swapfile
@@ -31,16 +42,5 @@ sudo echo 10 | sudo tee /proc/sys/vm/swappiness
 sudo echo vm.swappiness = 10 | sudo tee -a /etc/sysctl.conf
 sudo sysctl vm.vfs_cache_pressure=50
 
-# Install Certbot
-sudo add-apt-repository ppa:certbot/certbot -y
-sudo apt update
-sudo apt install certbot -y
-
-# Install haveged
-sudo apt install haveged -y
-
-# Install MongoDB 3.4
-sudo apt-get install mongodb-org
-
-# Install Unifi
-sudo apt-get install unifi
+# Update OS
+sudo apt upgrade -y
