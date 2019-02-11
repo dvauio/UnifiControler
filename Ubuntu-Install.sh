@@ -41,7 +41,7 @@ sudo echo vm.swappiness = 10 | sudo tee -a /etc/sysctl.conf
 sudo sysctl vm.vfs_cache_pressure=50
 
 # Request SSL cert
-sudo certbot certonly --standalone -d unifi.ripstone.co.uk
+sudo certbot certonly --standalone -d unifisvr2.ripstone.co.uk
 
 #Import Cert
 cd /etc/letsencrypt/live/unifisvr2.ripstone.co.uk/
