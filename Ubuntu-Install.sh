@@ -5,7 +5,7 @@ sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 0C49F3730359A1
 echo "deb [ arch=amd64,arm64 ] http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.4 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.4.list
 
 # Unifi List Key
-sudo apt-key adv --keyserver keyserver.ubuntu.com --recv 06E85760C0A52C50  -y
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv 06E85760C0A52C50
 
 # Unifi List File
 echo 'deb http://www.ubnt.com/downloads/unifi/debian stable ubiquiti' | sudo tee /etc/apt/sources.list.d/100-ubnt-unifi.list
