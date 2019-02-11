@@ -1,7 +1,3 @@
-# Notes
-wget -O https://github.com/dvauio/UnifiControler/blob/master/Ubuntu-Install.sh | bash
-#
-
 # Add MongoDB List Key
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 0C49F3730359A14518585931BC711F9BA15703C6
 
@@ -43,4 +39,4 @@ sudo echo vm.swappiness = 10 | sudo tee -a /etc/sysctl.conf
 sudo sysctl vm.vfs_cache_pressure=50
 
 # Update OS
-sudo apt update && sudo apt upgrade -y
+sudo DEBIAN_FRONTEND=noninteractive apt-get -y upgrade 
