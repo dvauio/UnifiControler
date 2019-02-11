@@ -1,8 +1,8 @@
 # Notes
-wget -O - hhttps://raw.githubusercontent.com/dvauio/UnifiControler/master/Ubuntu-Install.sh | bash
+wget -O - https://raw.githubusercontent.com/dvauio/WiFi/master/Unifi-Server-Installer.sh | bash
 #
 
-# Update OS
+echo Update OS
 sudo apt update
 sudo apt upgrade -y
 sudo apt dist-upgrade -y
@@ -24,6 +24,9 @@ sudo apt install certbot -y
 
 # Install haveged
 sudo apt install haveged -y
+
+# Update package list & install updates
+sudo apt update && sudo apt upgrade -y
 
 # Add MongoDB List Key
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 0C49F3730359A14518585931BC711F9BA15703C6
