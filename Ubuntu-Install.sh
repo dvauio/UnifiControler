@@ -40,5 +40,17 @@ sudo echo 10 | sudo tee /proc/sys/vm/swappiness
 sudo echo vm.swappiness = 10 | sudo tee -a /etc/sysctl.conf
 sudo sysctl vm.vfs_cache_pressure=50
 
+# Request SSL cert
+sudo certbot certonly --standalone -d unifi.ripstone.co.uk
+
+#Import Cert
+cd /etc/letsencrypt/live/unifisvr2.ripstone.co.uk/
+openssl pkcs12 -export -in cert.pem -inkey privkey.pem -out unifi.p12 -name unifi -CAfile fullchain.pem -caname root
+mv /var/lib/unifi/keystore /var/lib/unifi/keystore.backup
+keytool -importkeystore -deststorepass aircontrolenterprise -destkeypass aircontrolenterprise -destkeystore /var/lib/unifi/keystore -srckeystore unifi.p12 -srcstoretype PKCS12 -alias unifi
+
+#Restart Unifi service
+service unifi restart
+
 # Update OS
 sudo DEBIAN_FRONTEND=noninteractive apt-get -y upgrade 
