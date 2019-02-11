@@ -1,3 +1,7 @@
+# Notes
+wget -O - https://raw.githubusercontent.com/dvauio/WiFi/master/Unifi-Server-Installer.sh | bash
+#
+
 # Update package list & install updates
 sudo apt update && sudo apt upgrade -y
 
