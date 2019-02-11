@@ -5,7 +5,7 @@ sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 0C49F3730359A1
 echo "deb [ arch=amd64,arm64 ] http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.4 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.4.list
 
 # Unifi List Key
-sudo apt-key adv --keyserver keyserver.ubuntu.com --recv 06E85760C0A52C50
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv 06E85760C0A52C50  -y
 
 # Unifi List File
 echo 'deb http://www.ubnt.com/downloads/unifi/debian stable ubiquiti' | sudo tee /etc/apt/sources.list.d/100-ubnt-unifi.list
@@ -17,10 +17,10 @@ sudo add-apt-repository ppa:certbot/certbot -y
 sudo apt update
 
 # Install MongoDB 3.4
-sudo apt-get install mongodb-org
+sudo apt-get install mongodb-org -y
 
 # Install Unifi
-sudo apt-get install unifi
+sudo apt-get install unifi -y
 
 # Install Certbot
 sudo apt install certbot -y
