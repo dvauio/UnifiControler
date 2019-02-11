@@ -3,6 +3,7 @@ wget -O - https://raw.githubusercontent.com/dvauio/WiFi/master/Unifi-Server-Inst
 #
 
 echo Update OS
+sudo dpkg --configure -a
 sudo apt update
 sudo apt upgrade -y
 sudo apt dist-upgrade -y
