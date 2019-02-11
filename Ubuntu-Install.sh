@@ -2,8 +2,28 @@
 wget -O - hhttps://raw.githubusercontent.com/dvauio/UnifiControler/master/Ubuntu-Install.sh | bash
 #
 
-# Update package list & install updates
-sudo apt update && sudo apt upgrade -y
+# Update OS
+sudo apt update
+sudo apt upgrade -y
+sudo apt dist-upgrade -y
+
+# Create SWAP file
+sudo fallocate -l 1G /swapfile
+sudo chmod 600 /swapfile
+sudo mkswap /swapfile
+sudo swapon /swapfile
+sudo echo /swapfile none swap sw 0 0 | tee -a /etc/fstab
+sudo echo 10 | sudo tee /proc/sys/vm/swappiness
+sudo echo vm.swappiness = 10 | sudo tee -a /etc/sysctl.conf
+sudo sysctl vm.vfs_cache_pressure=50
+
+# Install Certbot
+sudo add-apt-repository ppa:certbot/certbot -y
+sudo apt update
+sudo apt install certbot -y
+
+# Install haveged
+sudo apt install haveged -y
 
 # Add MongoDB List Key
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 0C49F3730359A14518585931BC711F9BA15703C6
