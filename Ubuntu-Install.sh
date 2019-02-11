@@ -47,8 +47,8 @@ sudo certbot certonly --standalone -d unifisvr4.ripstone.co.uk --register-unsafe
 cd /etc/letsencrypt/live/unifisvr4.ripstone.co.uk/
 openssl pkcs12 -export -in cert.pem -inkey privkey.pem -out unifi.p12 -name unifi -CAfile fullchain.pem -caname root
 mv /var/lib/unifi/keystore /var/lib/unifi/keystore.backup
-keytool -importkeystore -deststorepass aircontrolenterprise -destkeypass aircontrolenterprise -destkeystore /etc/letsencrypt/live/unifisvr4.ripstone.co.uk -srckeystore unifi.p12 -srcstoretype PKCS12 -alias unifi
-
+cd /etc/letsencrypt/live/unifisvr4.ripstone.co.uk
+keytool -importkeystore -deststorepass aircontrolenterprise -destkeypass aircontrolenterprise -destkeystore /var/lib/unifi/keystore -srckeystore unifi.p12 -srcstoretype PKCS12 -alias unifi
 #Restart Unifi service
 service unifi restart
 
