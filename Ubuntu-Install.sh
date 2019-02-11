@@ -1,5 +1,5 @@
 # Notes
-wget -O - https://github.com/dvauio/UnifiControler/blob/master/Ubuntu-Install.sh | bash
+wget -O https://github.com/dvauio/UnifiControler/blob/master/Ubuntu-Install.sh | bash
 #
 
 # Add MongoDB List Key
