@@ -1,5 +1,5 @@
 # Notes
-wget -O - https://raw.githubusercontent.com/dvauio/WiFi/master/Unifi-Server-Installer.sh | bash
+https://raw.githubusercontent.com/dvauio/UnifiControler/master/Ubuntu-Install.sh | bash
 #
 
 # Add MongoDB List Key
