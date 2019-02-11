@@ -1,4 +1,3 @@
-
 # Notes
 wget -O - https://raw.githubusercontent.com/dvauio/WiFi/master/Unifi-Server-Installer.sh | bash
 #
@@ -41,6 +40,3 @@ sudo echo /swapfile none swap sw 0 0 | tee -a /etc/fstab
 sudo echo 10 | sudo tee /proc/sys/vm/swappiness
 sudo echo vm.swappiness = 10 | sudo tee -a /etc/sysctl.conf
 sudo sysctl vm.vfs_cache_pressure=50
-
-# Update OS
-sudo apt upgrade -y
