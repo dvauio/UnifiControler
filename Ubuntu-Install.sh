@@ -1,5 +1,5 @@
 # Notes
-wget -O - https://raw.githubusercontent.com/dvauio/WiFi/master/Unifi-Server-Installer.sh | bash
+wget -O - hhttps://raw.githubusercontent.com/dvauio/UnifiControler/master/Ubuntu-Install.sh | bash
 #
 
 # Update package list & install updates
